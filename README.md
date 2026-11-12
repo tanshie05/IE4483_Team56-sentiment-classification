@@ -108,9 +108,9 @@ sbatch jobs/slurm/cpu_job.sh python time_inference.py
 
 Team 56, NTU IE4483 Artificial Intelligence and Data Mining
 
-- [Name 1]
-- [Name 2]
-- [Name 3]
+- Tanshie Singhal
+- Raghavi Goel
+- Veeraj Mohanty
 
 ## References
 

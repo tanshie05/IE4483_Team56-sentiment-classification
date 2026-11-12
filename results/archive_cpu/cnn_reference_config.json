@@ -1,0 +1,51 @@
+{
+  "vocab_path": "processed/cnn_vocab.json",
+  "embedding_dim": 100,
+  "max_len": 300,
+  "kernel_sizes": [
+    3,
+    4,
+    5
+  ],
+  "num_filters": 100,
+  "dropout": 0.5,
+  "lr": 0.001,
+  "batch_size": 64,
+  "max_epochs": 20,
+  "patience": 3,
+  "padding": "end",
+  "truncating": "end",
+  "pos_weight": 0.17101584342963652,
+  "vocab_size": 6297,
+  "seed": 43,
+  "best_epoch": 9,
+  "threshold": 0.41,
+  "threshold_rule": "predict 1 (positive) when P(positive) >= threshold",
+  "weights": "cnn_reference_best.pt",
+  "device": "cpu",
+  "environment": {
+    "device": "cpu",
+    "hardware": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "python": "3.13.5",
+    "torch": "2.15.0+cpu",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1",
+    "torch_threads": 8,
+    "deterministic_algorithms": true
+  },
+  "validation_at_threshold": {
+    "accuracy": 0.8979591836734694,
+    "macro_f1": 0.8051427331944234,
+    "neg_precision": 0.632768361581921,
+    "neg_recall": 0.7133757961783439,
+    "neg_f1": 0.6706586826347305,
+    "pos_precision": 0.9500554938956715,
+    "pos_recall": 0.9294245385450597,
+    "pos_f1": 0.9396267837541165,
+    "tn": 112.0,
+    "fp": 45.0,
+    "fn": 65.0,
+    "tp": 856.0
+  },
+  "validation_roc_auc": 0.9211947689094517
+}

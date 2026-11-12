@@ -1,0 +1,39 @@
+{
+  "out_dir": "results/cnn/hparam_sweeps/hparam_sweep_2",
+  "device": "cuda",
+  "seeds": [42, 43, 44, 45, 46],
+  "reference_check": false,
+  "variants_prefix": "hparam2",
+  "report_title": "Text CNN completeness sweep: kernel sizes, batch size, patience (final config, GPU)",
+  "save_all_weights": true,
+  "embedding_init": "glove",
+  "freeze_embedding": false,
+  "pos_weight": 1,
+  "checkpoint_metric": "val_loss",
+  "variants": {
+    "reference": {},
+    "kernels_3_x300": {"kernel_sizes": [3], "num_filters": 300},
+    "kernels_2_3_4": {"kernel_sizes": [2, 3, 4]},
+    "kernels_3_5_7": {"kernel_sizes": [3, 5, 7]},
+    "batch_32": {"batch_size": 32},
+    "batch_128": {"batch_size": 128},
+    "patience_2": {"patience": 2},
+    "patience_5": {"patience": 5}
+  },
+  "reuse": {
+    "reference": {"dir": "results/cnn/imbalance_checkpoint", "prefix": "imbalance", "variant": "unweighted_val_loss"}
+  },
+  "bootstrap_pairs": [
+    ["kernels_3_x300", "reference"], ["kernels_2_3_4", "reference"], ["kernels_3_5_7", "reference"],
+    ["batch_32", "reference"], ["batch_128", "reference"], ["patience_2", "reference"], ["patience_5", "reference"]
+  ],
+  "sweep": {
+    "reference": "reference",
+    "min_seeds": 3,
+    "factors": {
+      "Kernel sizes (300 filters in total)": {"settings": ["kernel_sizes", "num_filters"], "variants": ["kernels_3_x300", "kernels_2_3_4", "reference", "kernels_3_5_7"]},
+      "Batch size": {"setting": "batch_size", "variants": ["batch_32", "reference", "batch_128"]},
+      "Early-stopping patience": {"setting": "patience", "variants": ["patience_2", "reference", "patience_5"]}
+    }
+  }
+}

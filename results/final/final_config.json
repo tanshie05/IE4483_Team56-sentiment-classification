@@ -1,0 +1,93 @@
+{
+  "submission_model": "combination",
+  "decision_file": "results/holdout/holdout_decision.json",
+  "decision_reason": "Rule 4: neither paired-bootstrap interval (CNN minus rule-6 baseline, macro-F1 and accuracy) lies entirely below 0, so the CNN (main model) is submitted. Rule 8 adopted the combination in stage A and on the holdout it is not clearly worse than the official CNN, so the combination is submitted.",
+  "fitted_on": [
+    "train",
+    "val",
+    "holdout"
+  ],
+  "fit_rows": 7182,
+  "fit_negatives": 1048,
+  "cnn": {
+    "vocab_path": "processed/cnn_vocab.json",
+    "embedding_init": "glove",
+    "freeze_embedding": false,
+    "embedding_dim": 100,
+    "max_len": 300,
+    "kernel_sizes": [
+      3,
+      4,
+      5
+    ],
+    "num_filters": 100,
+    "dropout": 0.5,
+    "lr": 0.001,
+    "batch_size": 64,
+    "pos_weight": 1.0,
+    "glove_path": "data/glove/glove.6B.100d.txt",
+    "epochs": 7,
+    "threshold": 0.66,
+    "seed": 42,
+    "weights": "cnn_final.pt",
+    "vocab_size": 6297,
+    "train_losses": [
+      0.39732498701519703,
+      0.2755871080640165,
+      0.20187842789482385,
+      0.14622456677085807,
+      0.11003901067923053,
+      0.08119533948062921,
+      0.05958033973453304
+    ],
+    "train_seconds": 5.672983911994379,
+    "rerun_identical": true
+  },
+  "baseline": {
+    "experiment": "exp04",
+    "tfidf": {
+      "lowercase": true,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "max_features": 5000,
+      "min_df": 2,
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b\\w\\w+(?:'\\w+)?\\b|[!?]",
+      "n_features": 5000
+    },
+    "logistic_regression": {
+      "C": 1,
+      "class_weight": "balanced",
+      "max_iter": 2000,
+      "random_state": 42
+    },
+    "threshold": 0.45,
+    "fold_thresholds": [
+      0.46,
+      0.43,
+      0.44,
+      0.45,
+      0.45
+    ],
+    "saved_threshold": 0.41,
+    "pipeline": "baseline_final.joblib",
+    "train_seconds": 0.2999001690041041
+  },
+  "combination_threshold": 0.57,
+  "threshold_rule": "predict 1 (positive) when P(positive) >= threshold",
+  "environment": {
+    "device": "cuda",
+    "hardware": "NVIDIA RTX A6000",
+    "node": "gpu-a6000-1.cluster02.eee.ntu.edu.sg",
+    "slurm_job_id": "1734318",
+    "gpu_bus_id": "00000000:02:11.0",
+    "gpu_uuid": "GPU-a636ab96-1860-708f-cc53-2c9436ad4bd5",
+    "python": "3.13.18",
+    "torch": "2.15.0+cu132",
+    "numpy": "2.5.4",
+    "torch_threads": 4,
+    "deterministic_algorithms": true
+  }
+}

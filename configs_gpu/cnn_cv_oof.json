@@ -1,0 +1,14 @@
+{
+  "out_dir": "results/cnn/cv_oof",
+  "device": "cuda",
+  "embedding_init": "glove",
+  "freeze_embedding": false,
+  "pos_weight": 1,
+  "checkpoint_metric": "val_loss",
+  "decision": "results/cnn/hparam_sweeps/hparam_sweep/sweep_decision.json",
+  "cv_variants": {
+    "final": {"checkpoint_metric": "val_loss"}
+  },
+  "cv_seeds": [42, 43, 44],
+  "save_oof": true
+}

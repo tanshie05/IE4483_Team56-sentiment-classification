@@ -1,0 +1,30 @@
+{
+  "out_dir": "results/cnn/hparam_sweeps/hparam_sweep_2/embedding_dim",
+  "device": "cuda",
+  "seeds": [42, 43, 44, 45, 46],
+  "reference_check": false,
+  "variants_prefix": "embdim",
+  "report_title": "Text CNN completeness sweep: GloVe embedding dimension (final config, GPU)",
+  "save_all_weights": true,
+  "embedding_init": "glove",
+  "freeze_embedding": false,
+  "pos_weight": 1,
+  "checkpoint_metric": "val_loss",
+  "variants": {
+    "reference": {},
+    "glove_50d": {"embedding_dim": 50, "glove_path": "data/glove/glove.6B.50d.txt"},
+    "glove_200d": {"embedding_dim": 200, "glove_path": "data/glove/glove.6B.200d.txt"},
+    "glove_300d": {"embedding_dim": 300, "glove_path": "data/glove/glove.6B.300d.txt"}
+  },
+  "reuse": {
+    "reference": {"dir": "results/cnn/imbalance_checkpoint", "prefix": "imbalance", "variant": "unweighted_val_loss"}
+  },
+  "bootstrap_pairs": [["glove_50d", "reference"], ["glove_200d", "reference"], ["glove_300d", "reference"]],
+  "sweep": {
+    "reference": "reference",
+    "min_seeds": 3,
+    "factors": {
+      "Embedding dimension (GloVe 6B)": {"settings": ["embedding_dim", "glove_path"], "variants": ["glove_50d", "reference", "glove_200d", "glove_300d"]}
+    }
+  }
+}

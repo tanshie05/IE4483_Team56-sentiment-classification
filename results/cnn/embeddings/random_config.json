@@ -1,0 +1,55 @@
+{
+  "vocab_path": "processed/cnn_vocab.json",
+  "embedding_init": "random",
+  "freeze_embedding": false,
+  "embedding_dim": 100,
+  "max_len": 300,
+  "kernel_sizes": [
+    3,
+    4,
+    5
+  ],
+  "num_filters": 100,
+  "dropout": 0.5,
+  "lr": 0.001,
+  "batch_size": 64,
+  "max_epochs": 20,
+  "patience": 3,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "checkpoint_metric": "val_loss",
+  "glove_path": null,
+  "glove_std": null,
+  "padding": "end",
+  "truncating": "end",
+  "pos_weight": 0.17101584342963652,
+  "vocab_size": 6297,
+  "device": "cuda",
+  "environment": {
+    "device": "cuda",
+    "hardware": "NVIDIA RTX A6000",
+    "node": "gpu-a6000-1.cluster02.eee.ntu.edu.sg",
+    "slurm_job_id": "244334",
+    "gpu_bus_id": "00000000:02:11.0",
+    "gpu_uuid": "GPU-a636ab96-1860-708f-cc53-2c9436ad4bd5",
+    "python": "3.13.18",
+    "torch": "2.15.0+cu132",
+    "numpy": "2.5.4",
+    "torch_threads": 4,
+    "deterministic_algorithms": true
+  },
+  "reused_from": null,
+  "thresholds_by_seed": {
+    "42": 0.28,
+    "43": 0.32,
+    "44": 0.47,
+    "45": 0.35,
+    "46": 0.36
+  },
+  "saved_weights": null
+}

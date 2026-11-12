@@ -1,0 +1,18 @@
+{
+  "out_dir": "results/cnn/embeddings",
+  "device": "cuda",
+  "seeds": [42, 43, 44, 45, 46],
+  "reference_check": false,
+  "variants_prefix": "glove",
+  "report_title": "Text CNN embedding variants on GPU",
+  "save_all_weights": true,
+  "variants": {
+    "random": {"embedding_init": "random", "freeze_embedding": false},
+    "glove_frozen": {"embedding_init": "glove", "freeze_embedding": true},
+    "glove_finetuned": {"embedding_init": "glove", "freeze_embedding": false}
+  },
+  "bootstrap_pairs": [
+    ["random", "baseline exp04"], ["glove_frozen", "baseline exp04"], ["glove_finetuned", "baseline exp04"],
+    ["glove_frozen", "random"], ["glove_finetuned", "random"], ["glove_finetuned", "glove_frozen"]
+  ]
+}

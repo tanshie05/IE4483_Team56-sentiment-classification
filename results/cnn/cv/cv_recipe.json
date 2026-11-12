@@ -1,0 +1,33 @@
+{
+  "settings": {
+    "lr": 0.001,
+    "dropout": 0.5,
+    "max_len": 300,
+    "num_filters": 100
+  },
+  "pos_weight": 1,
+  "checkpoint_metric": "val_loss",
+  "runs": 15,
+  "threshold": 0.66,
+  "threshold_mean": 0.6519999999999999,
+  "threshold_min": 0.47,
+  "threshold_max": 0.78,
+  "epochs": 7,
+  "epochs_median_exact": 7.0,
+  "epochs_mean": 7.0,
+  "epochs_min": 5,
+  "epochs_max": 10,
+  "environment": {
+    "device": "cuda",
+    "hardware": "NVIDIA RTX A6000",
+    "node": "gpu-a6000-1.cluster02.eee.ntu.edu.sg",
+    "slurm_job_id": "244406",
+    "gpu_bus_id": "00000000:02:10.0",
+    "gpu_uuid": "GPU-32d78bd4-1224-546e-6fb7-0f0a2ca6772a",
+    "python": "3.13.18",
+    "torch": "2.15.0+cu132",
+    "numpy": "2.5.4",
+    "torch_threads": 8,
+    "deterministic_algorithms": true
+  }
+}

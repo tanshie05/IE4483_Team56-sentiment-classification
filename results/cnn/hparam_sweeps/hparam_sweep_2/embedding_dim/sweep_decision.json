@@ -1,0 +1,95 @@
+{
+  "rule": "replace the reference only if mean tuned macro-F1 is higher and the paired bootstrap macro-F1 interval vs reference is entirely above 0 in at least 3 of 5 seeds",
+  "reference": "reference",
+  "settings": {
+    "embedding_dim": 100,
+    "glove_path": "data/glove/glove.6B.100d.txt"
+  },
+  "changed": [],
+  "table": [
+    {
+      "factor": "Embedding dimension (GloVe 6B)",
+      "setting": "embedding_dim, glove_path",
+      "value": {
+        "embedding_dim": 50,
+        "glove_path": "data/glove/glove.6B.50d.txt"
+      },
+      "values": {
+        "embedding_dim": 50,
+        "glove_path": "data/glove/glove.6B.50d.txt"
+      },
+      "variant": "glove_50d",
+      "tuned_macro_f1_mean": 0.8232798159711399,
+      "tuned_macro_f1_std": 0.004409301232317095,
+      "tuned_accuracy_mean": 0.909090909090909,
+      "tuned_accuracy_std": 0.004864605047171389,
+      "seeds_above": 0,
+      "seeds_below": 3,
+      "mean_difference": -0.020016406996486512,
+      "decision": "tested, no reliable gain"
+    },
+    {
+      "factor": "Embedding dimension (GloVe 6B)",
+      "setting": "embedding_dim, glove_path",
+      "value": {
+        "embedding_dim": 100,
+        "glove_path": "data/glove/glove.6B.100d.txt"
+      },
+      "values": {
+        "embedding_dim": 100,
+        "glove_path": "data/glove/glove.6B.100d.txt"
+      },
+      "variant": "reference",
+      "tuned_macro_f1_mean": 0.8434240236473538,
+      "tuned_macro_f1_std": 0.0069204253579315655,
+      "tuned_accuracy_mean": 0.919851576994434,
+      "tuned_accuracy_std": 0.00417954743082331,
+      "seeds_above": null,
+      "seeds_below": null,
+      "mean_difference": 0.0,
+      "decision": "reference"
+    },
+    {
+      "factor": "Embedding dimension (GloVe 6B)",
+      "setting": "embedding_dim, glove_path",
+      "value": {
+        "embedding_dim": 200,
+        "glove_path": "data/glove/glove.6B.200d.txt"
+      },
+      "values": {
+        "embedding_dim": 200,
+        "glove_path": "data/glove/glove.6B.200d.txt"
+      },
+      "variant": "glove_200d",
+      "tuned_macro_f1_mean": 0.8452110497045812,
+      "tuned_macro_f1_std": 0.005095815359802551,
+      "tuned_accuracy_mean": 0.9207792207792208,
+      "tuned_accuracy_std": 0.004934855687669908,
+      "seeds_above": 0,
+      "seeds_below": 0,
+      "mean_difference": 0.002016561241413755,
+      "decision": "tested, no reliable gain"
+    },
+    {
+      "factor": "Embedding dimension (GloVe 6B)",
+      "setting": "embedding_dim, glove_path",
+      "value": {
+        "embedding_dim": 300,
+        "glove_path": "data/glove/glove.6B.300d.txt"
+      },
+      "values": {
+        "embedding_dim": 300,
+        "glove_path": "data/glove/glove.6B.300d.txt"
+      },
+      "variant": "glove_300d",
+      "tuned_macro_f1_mean": 0.8483266984830744,
+      "tuned_macro_f1_std": 0.002327906181538369,
+      "tuned_accuracy_mean": 0.9230055658627088,
+      "tuned_accuracy_std": 0.0039356592644891625,
+      "seeds_above": 0,
+      "seeds_below": 0,
+      "mean_difference": 0.004894332950037916,
+      "decision": "tested, no reliable gain"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "embedding_dim": 100,
+  "max_len": 300,
+  "kernel_sizes": [3, 4, 5],
+  "num_filters": 100,
+  "dropout": 0.5,
+  "lr": 0.001,
+  "batch_size": 64,
+  "max_epochs": 20,
+  "patience": 3,
+  "seeds": [42, 43, 44]
+}

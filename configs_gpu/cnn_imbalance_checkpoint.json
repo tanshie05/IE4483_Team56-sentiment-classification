@@ -1,0 +1,27 @@
+{
+  "out_dir": "results/cnn/imbalance_checkpoint",
+  "device": "cuda",
+  "seeds": [42, 43, 44, 45, 46],
+  "reference_check": false,
+  "variants_prefix": "imbalance",
+  "report_title": "Text CNN 2×2: loss weighting × checkpoint criterion (fine-tuned GloVe, GPU)",
+  "save_all_weights": true,
+  "variants": {
+    "weighted_val_loss": {"embedding_init": "glove", "freeze_embedding": false, "pos_weight": "balanced", "checkpoint_metric": "val_loss"},
+    "weighted_val_f1": {"embedding_init": "glove", "freeze_embedding": false, "pos_weight": "balanced", "checkpoint_metric": "val_macro_f1"},
+    "unweighted_val_loss": {"embedding_init": "glove", "freeze_embedding": false, "pos_weight": 1, "checkpoint_metric": "val_loss"},
+    "unweighted_val_f1": {"embedding_init": "glove", "freeze_embedding": false, "pos_weight": 1, "checkpoint_metric": "val_macro_f1"}
+  },
+  "reuse": {
+    "weighted_val_loss": {"dir": "results/cnn/embeddings", "prefix": "glove", "variant": "glove_finetuned"}
+  },
+  "bootstrap_pairs": [
+    ["weighted_val_loss", "baseline exp04"], ["weighted_val_f1", "baseline exp04"],
+    ["unweighted_val_loss", "baseline exp04"], ["unweighted_val_f1", "baseline exp04"],
+    ["weighted_val_f1", "weighted_val_loss"], ["unweighted_val_loss", "weighted_val_loss"], ["unweighted_val_f1", "weighted_val_loss"]
+  ],
+  "grid": {
+    "weighted (pos_weight = N_neg/N_pos)": {"val_loss": "weighted_val_loss", "val_macro_f1": "weighted_val_f1"},
+    "unweighted (pos_weight = 1)": {"val_loss": "unweighted_val_loss", "val_macro_f1": "unweighted_val_f1"}
+  }
+}

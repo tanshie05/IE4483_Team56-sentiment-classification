@@ -1,0 +1,7 @@
+{
+  "out_dir": "reproduction/smoke_test",
+  "device": "auto",
+  "max_epochs": 1,
+  "seeds": [42],
+  "rerun_seed": 42
+}

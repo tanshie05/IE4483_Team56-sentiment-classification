@@ -1,0 +1,6 @@
+# Keep data files byte for byte (submission.csv uses CRLF row endings and quoted line breaks).
+*.csv -text
+*.json -text
+*.npz binary
+*.joblib binary
+*.pt binary

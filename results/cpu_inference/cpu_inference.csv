@@ -1,0 +1,5 @@
+Model,Feature format,Parameters,Size on disk (KB),"Preprocess ms / 1,000","Model ms / 1,000","Total CPU ms / 1,000","Val macro-F1, tuned","Val accuracy, tuned",CV macro-F1,Training,weights
+TF-IDF + LR (exp04),"sparse TF-IDF, 5,000 unigrams","5,001",217.5,20.3,0.1,20.4,0.8408,0.9193,0.8253 ± 0.0190,0.12 s fit on this CPU,
+CNN random embeddings,"random embeddings, max_len 300","750,301 (750,301 trainable)",2934.8,23.1,314.4,337.5,0.7909 ± 0.0119,0.8920 ± 0.0073,—,4.7 s per run on the a6000 GPU (median),results/cnn/embeddings/weights/random_seed42.pt (seed 42)
+CNN GloVe frozen,"GloVe 100d embeddings, frozen, max_len 300","750,301 (120,601 trainable)",2934.9,23.0,339.4,362.4,0.8060 ± 0.0112,0.9019 ± 0.0059,—,5.1 s per run on the a6000 GPU (median),results/cnn/embeddings/weights/glove_frozen_seed45.pt (seed 45)
+CNN final (fine-tuned GloVe),"GloVe 100d embeddings, max_len 300","750,301 (750,301 trainable)",2935.1,24.6,340.7,365.3,0.8434 ± 0.0069,0.9199 ± 0.0042,0.8260 ± 0.0187,4.0 s per run on the a6000 GPU (median),results/cnn/imbalance_checkpoint/weights/unweighted_val_loss_seed42.pt (seed 42)

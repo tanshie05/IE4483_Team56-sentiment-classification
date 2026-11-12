@@ -1,0 +1,45 @@
+{
+  "vocab_path": "processed/cnn_vocab.json",
+  "embedding_init": "glove",
+  "freeze_embedding": true,
+  "embedding_dim": 100,
+  "max_len": 300,
+  "kernel_sizes": [
+    3,
+    4,
+    5
+  ],
+  "num_filters": 100,
+  "dropout": 0.5,
+  "lr": 0.001,
+  "batch_size": 64,
+  "max_epochs": 20,
+  "patience": 3,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "glove_path": "data/glove/glove.6B.100d.txt",
+  "glove_std": 0.4081572760019,
+  "padding": "end",
+  "truncating": "end",
+  "pos_weight": 0.17101584342963652,
+  "vocab_size": 6297,
+  "device": "cpu",
+  "environment": {
+    "device": "cpu",
+    "hardware": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "python": "3.13.5",
+    "torch": "2.15.0+cpu",
+    "numpy": "2.5.4",
+    "torch_threads": 8,
+    "deterministic_algorithms": true
+  },
+  "thresholds_by_seed": {
+    "42": 0.27,
+    "43": 0.21,
+    "44": 0.32
+  },
+  "saved_weights": null
+}

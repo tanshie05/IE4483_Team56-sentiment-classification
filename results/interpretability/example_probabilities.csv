@@ -1,0 +1,14 @@
+models,split,row,label,cnn_prob,baseline_prob,combination_prob,saved_cnn_prob,saved_baseline_prob
+final,holdout,579,1.0,0.9974,0.2292,0.6133,,
+final,holdout,898,0.0,0.0085,0.3658,0.1871,,
+final,holdout,639,0.0,0.1567,0.6254,0.3911,,
+final,holdout,439,0.0,0.984,0.8402,0.9121,,
+final,holdout,962,0.0,0.0734,0.1002,0.0868,,
+final,holdout,16,1.0,0.8927,0.2701,0.5814,,
+final,test,456,,0.9393,0.2005,0.5699,0.9393,0.2005
+holdout_stage,holdout,579,1.0,0.9981,0.2111,0.6046,0.9981,0.2111
+holdout_stage,holdout,898,0.0,0.0319,0.6577,0.3448,0.0319,0.6577
+holdout_stage,holdout,639,0.0,0.9913,0.8452,0.9183,0.9913,0.8452
+holdout_stage,holdout,439,0.0,1.0,0.9669,0.9835,1.0,0.9669
+holdout_stage,holdout,962,0.0,0.8552,0.1278,0.4915,0.8552,0.1278
+holdout_stage,holdout,16,1.0,0.0685,0.2402,0.1544,0.0685,0.2402

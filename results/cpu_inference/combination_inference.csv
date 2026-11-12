@@ -1,0 +1,4 @@
+Model (final, fitted on 7,182 reviews),Parameters,Size on disk (KB),Preprocess ms / 1,000,Model ms / 1,000,Total CPU ms / 1,000,Range over rounds
+"TF-IDF + LR (exp04)","5,001","217.3","16.3","0.1","16.4","16.2–16.6"
+"CNN (fine-tuned GloVe, pos_weight 1)","750,301","2934.7","19.3","274.7","294.0","287.1–499.9"
+"Combination (submitted; mean of both, threshold 0.57)","755,302","3152.0","(included)","(included)","307.4","297.2–342.6"

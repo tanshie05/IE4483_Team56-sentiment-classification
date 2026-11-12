@@ -1,0 +1,85 @@
+{
+  "eval_split": "holdout",
+  "fit_splits": [
+    "train",
+    "val"
+  ],
+  "chosen": "combination",
+  "reason": "Rule 4: neither paired-bootstrap interval (CNN minus rule-6 baseline, macro-F1 and accuracy) lies entirely below 0, so the CNN (main model) is submitted. Rule 8 adopted the combination in stage A and on the holdout it is not clearly worse than the official CNN, so the combination is submitted.",
+  "official_cnn_seed": 42,
+  "cnn_threshold": 0.66,
+  "cnn_epochs": 7,
+  "baseline_threshold": 0.45,
+  "combination_threshold": 0.57,
+  "stage_a": {
+    "rule": "Rule 8: adopt the CNN + baseline combination only if its CV mean macro-F1 beats BOTH single models by at least 0.01 AND it is higher than both in at least 4 of 5 folds.",
+    "adopted": true,
+    "status": "adopted",
+    "combination_mean_macro_f1": 0.8387881299385207,
+    "cnn_mean_macro_f1": 0.8259706612064802,
+    "baseline_mean_macro_f1": 0.8258572194604141,
+    "gain_over_cnn": 0.012817468732040482,
+    "gain_over_baseline": 0.012930910478106572,
+    "folds_above_both": 4,
+    "folds": 5,
+    "combination_threshold": 0.57,
+    "combination_thresholds": [
+      0.57,
+      0.49,
+      0.58,
+      0.54,
+      0.56,
+      0.6,
+      0.6,
+      0.56,
+      0.44,
+      0.58,
+      0.5,
+      0.58,
+      0.57,
+      0.57,
+      0.57
+    ],
+    "cnn_3seed_average_mean_macro_f1": 0.8295797198017784,
+    "cnn_3seed_average_gain_over_cnn": 0.0036090585952981424,
+    "cnn_rerun_matches_saved_cv": true,
+    "cnn_rerun_max_abs_diff_folds": {
+      "tuned_macro_f1": 0.0,
+      "tuned_accuracy": 0.0,
+      "roc_auc": 0.0,
+      "inner_threshold": 0.0
+    },
+    "cnn_rerun_max_abs_diff_runs": {
+      "tuned_macro_f1": 0.0,
+      "tuned_accuracy": 0.0,
+      "roc_auc": 0.0,
+      "inner_threshold": 0.0,
+      "best_epoch": 0.0
+    },
+    "baseline_recompute_matches_saved": false,
+    "baseline_recompute_max_abs_diff": {
+      "tuned_macro_f1": 0.0029664066603123374,
+      "tuned_accuracy": 0.0016393442622950616,
+      "roc_auc": 0.00023183592486342164,
+      "inner_threshold": 0.0
+    }
+  },
+  "rule4_bootstrap": {
+    "macro_f1": {
+      "observed": 1.3221841402621948e-05,
+      "mean": -0.0006413858974766962,
+      "low": -0.03395548030285604,
+      "high": 0.03408130124405099,
+      "entirely_below_0": false,
+      "entirely_above_0": false
+    },
+    "accuracy": {
+      "observed": 0.012987012987012991,
+      "mean": 0.012687847866419293,
+      "low": -0.004638218923933235,
+      "high": 0.029684601113172504,
+      "entirely_below_0": false,
+      "entirely_above_0": false
+    }
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "rule": "replace the reference only if mean tuned macro-F1 is higher and the paired bootstrap macro-F1 interval vs reference is entirely above 0 in at least 3 of 5 seeds",
+  "reference": "reference",
+  "settings": {
+    "kernel_sizes": [
+      3,
+      4,
+      5
+    ],
+    "num_filters": 100,
+    "batch_size": 64,
+    "patience": 3
+  },
+  "changed": [],
+  "table": [
+    {
+      "factor": "Kernel sizes (300 filters in total)",
+      "setting": "kernel_sizes, num_filters",
+      "value": {
+        "kernel_sizes": [
+          3
+        ],
+        "num_filters": 300
+      },
+      "values": {
+        "kernel_sizes": [
+          3
+        ],
+        "num_filters": 300
+      },
+      "variant": "kernels_3_x300",
+      "tuned_macro_f1_mean": 0.8396927396324664,
+      "tuned_macro_f1_std": 0.008388855513883967,
+      "tuned_accuracy_mean": 0.9178107606679035,
+      "tuned_accuracy_std": 0.005021287051103674,
+      "seeds_above": 0,
+      "seeds_below": 0,
+      "mean_difference": -0.00358877867581455,
+      "decision": "tested, no reliable gain"
+    },
+    {
+      "factor": "Kernel sizes (300 filters in total)",
+      "setting": "kernel_sizes, num_filters",
+      "value": {
+        "kernel_sizes": [
+          2,
+          3,
+          4
+        ],
+        "num_filters": 100
+      },
+      "values": {
+        "kernel_sizes": [
+          2,
+          3,
+          4
+        ],
+        "num_filters": 100
+      },
+      "variant": "kernels_2_3_4",
+      "tuned_macro_f1_mean": 0.8408451108361987,
+      "tuned_macro_f1_std": 0.006121940722720303,
+      "tuned_accuracy_mean": 0.9172541743970315,
+      "tuned_accuracy_std": 0.005733408957462897,
+      "seeds_above": 0,
+      "seeds_below": 1,
+      "mean_difference": -0.0025505164400650227,
+      "decision": "tested, no reliable gain"
+    },
+    {
+      "factor": "Kernel sizes (300 filters in total)",
+      "setting": "kernel_sizes, num_filters",
+      "value": {
+        "kernel_sizes": [
+          3,
+          4,
+          5
+        ],
+        "num_filters": 100
+      },
+      "values": {
+        "kernel_sizes": [
+          3,
+          4,
+          5
+        ],
+        "num_filters": 100
+      },
+      "variant": "reference",
+      "tuned_macro_f1_mean": 0.8434240236473538,
+      "tuned_macro_f1_std": 0.0069204253579315655,
+      "tuned_accuracy_mean": 0.919851576994434,
+      "tuned_accuracy_std": 0.00417954743082331,
+      "seeds_above": null,
+      "seeds_below": null,
+      "mean_difference": 0.0,
+      "decision": "reference"
+    },
+    {
+      "factor": "Kernel sizes (300 filters in total)",
+      "setting": "kernel_sizes, num_filters",
+      "value": {
+        "kernel_sizes": [
+          3,
+          5,
+          7
+        ],
+        "num_filters": 100
+      },
+      "values": {
+        "kernel_sizes": [
+          3,
+          5,
+          7
+        ],
+        "num_filters": 100
+      },
+      "variant": "kernels_3_5_7",
+      "tuned_macro_f1_mean": 0.8247820113254727,
+      "tuned_macro_f1_std": 0.005247015082286351,
+      "tuned_accuracy_mean": 0.9155844155844155,
+      "tuned_accuracy_std": 0.002074274561688116,
+      "seeds_above": 0,
+      "seeds_below": 2,
+      "mean_difference": -0.018524655804478336,
+      "decision": "tested, no reliable gain"
+    },
+    {
+      "factor": "Batch size",
+      "setting": "batch_size",
+      "value": 32,
+      "values": {
+        "batch_size": 32
+      },
+      "variant": "batch_32",
+      "tuned_macro_f1_mean": 0.8402444245529418,
+      "tuned_macro_f1_std": 0.006464360865065198,
+      "tuned_accuracy_mean": 0.9174397031539889,
+      "tuned_accuracy_std": 0.0044969200903676445,
+      "seeds_above": 0,
+      "seeds_below": 1,
+      "mean_difference": -0.003018020357036498,
+      "decision": "tested, no reliable gain"
+    },
+    {
+      "factor": "Batch size",
+      "setting": "batch_size",
+      "value": 64,
+      "values": {
+        "batch_size": 64
+      },
+      "variant": "reference",
+      "tuned_macro_f1_mean": 0.8434240236473538,
+      "tuned_macro_f1_std": 0.0069204253579315655,
+      "tuned_accuracy_mean": 0.919851576994434,
+      "tuned_accuracy_std": 0.00417954743082331,
+      "seeds_above": null,
+      "seeds_below": null,
+      "mean_difference": 0.0,
+      "decision": "reference"
+    },
+    {
+      "factor": "Batch size",
+      "setting": "batch_size",
+      "value": 128,
+      "values": {
+        "batch_size": 128
+      },
+      "variant": "batch_128",
+      "tuned_macro_f1_mean": 0.8304884128867049,
+      "tuned_macro_f1_std": 0.004592491274368782,
+      "tuned_accuracy_mean": 0.9094619666048238,
+      "tuned_accuracy_std": 0.004331212441531986,
+      "seeds_above": 0,
+      "seeds_below": 1,
+      "mean_difference": -0.012824223248638373,
+      "decision": "tested, no reliable gain"
+    },
+    {
+      "factor": "Early-stopping patience",
+      "setting": "patience",
+      "value": 2,
+      "values": {
+        "patience": 2
+      },
+      "variant": "patience_2",
+      "tuned_macro_f1_mean": 0.8434240236473538,
+      "tuned_macro_f1_std": 0.0069204253579315655,
+      "tuned_accuracy_mean": 0.919851576994434,
+      "tuned_accuracy_std": 0.00417954743082331,
+      "seeds_above": 0,
+      "seeds_below": 0,
+      "mean_difference": 0.0,
+      "decision": "tested, no reliable gain"
+    },
+    {
+      "factor": "Early-stopping patience",
+      "setting": "patience",
+      "value": 3,
+      "values": {
+        "patience": 3
+      },
+      "variant": "reference",
+      "tuned_macro_f1_mean": 0.8434240236473538,
+      "tuned_macro_f1_std": 0.0069204253579315655,
+      "tuned_accuracy_mean": 0.919851576994434,
+      "tuned_accuracy_std": 0.00417954743082331,
+      "seeds_above": null,
+      "seeds_below": null,
+      "mean_difference": 0.0,
+      "decision": "reference"
+    },
+    {
+      "factor": "Early-stopping patience",
+      "setting": "patience",
+      "value": 5,
+      "values": {
+        "patience": 5
+      },
+      "variant": "patience_5",
+      "tuned_macro_f1_mean": 0.8434240236473538,
+      "tuned_macro_f1_std": 0.0069204253579315655,
+      "tuned_accuracy_mean": 0.919851576994434,
+      "tuned_accuracy_std": 0.00417954743082331,
+      "seeds_above": 0,
+      "seeds_below": 0,
+      "mean_difference": 0.0,
+      "decision": "tested, no reliable gain"
+    }
+  ]
+}

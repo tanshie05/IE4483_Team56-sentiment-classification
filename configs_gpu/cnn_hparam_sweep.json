@@ -1,0 +1,39 @@
+{
+  "out_dir": "results/cnn/hparam_sweeps/hparam_sweep",
+  "device": "cuda",
+  "seeds": [42, 43, 44, 45, 46],
+  "reference_check": false,
+  "variants_prefix": "hparam",
+  "report_title": "Text CNN one-factor hyperparameter sweep (fine-tuned GloVe, pos_weight = 1, checkpoint by val loss, GPU)",
+  "save_all_weights": true,
+  "embedding_init": "glove",
+  "freeze_embedding": false,
+  "pos_weight": 1,
+  "checkpoint_metric": "val_loss",
+  "variants": {
+    "reference": {},
+    "lr_0.0005": {"lr": 0.0005},
+    "lr_0.002": {"lr": 0.002},
+    "dropout_0.3": {"dropout": 0.3},
+    "max_len_200": {"max_len": 200},
+    "filters_50": {"num_filters": 50},
+    "filters_200": {"num_filters": 200}
+  },
+  "reuse": {
+    "reference": {"dir": "results/cnn/imbalance_checkpoint", "prefix": "imbalance", "variant": "unweighted_val_loss"}
+  },
+  "bootstrap_pairs": [
+    ["lr_0.0005", "reference"], ["lr_0.002", "reference"], ["dropout_0.3", "reference"],
+    ["max_len_200", "reference"], ["filters_50", "reference"], ["filters_200", "reference"]
+  ],
+  "sweep": {
+    "reference": "reference",
+    "min_seeds": 3,
+    "factors": {
+      "Learning rate": {"setting": "lr", "variants": ["lr_0.0005", "reference", "lr_0.002"]},
+      "Dropout": {"setting": "dropout", "variants": ["dropout_0.3", "reference"]},
+      "max_len": {"setting": "max_len", "variants": ["max_len_200", "reference"]},
+      "Filters per kernel": {"setting": "num_filters", "variants": ["filters_50", "reference", "filters_200"]}
+    }
+  }
+}

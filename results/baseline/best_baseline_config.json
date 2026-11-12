@@ -1,0 +1,106 @@
+{
+  "experiment": "exp04",
+  "seed": 42,
+  "threshold": 0.41,
+  "threshold_rule": "predict 1 (positive) when P(positive) >= threshold",
+  "threshold_source": "validation macro-F1 sweep 0.05 to 0.95 in steps of 0.01",
+  "fitted_on": "train partition only",
+  "tfidf": {
+    "lowercase": true,
+    "ngram_range": [
+      1,
+      1
+    ],
+    "max_features": 5000,
+    "min_df": 2,
+    "sublinear_tf": true,
+    "token_pattern": "(?u)\\b\\w\\w+(?:'\\w+)?\\b|[!?]",
+    "n_features": 5000
+  },
+  "logistic_regression": {
+    "C": 1,
+    "class_weight": "balanced",
+    "max_iter": 2000,
+    "random_state": 42
+  },
+  "selection_reason": "exp18 has the highest CV mean macro-F1 (0.8314 \u00b1 0.0216), but exp04 (0.8253) is within one std and is more regularised or smaller, so it is preferred.",
+  "validation_at_threshold": {
+    "accuracy": 0.9192949907235621,
+    "macro_f1": 0.8407802592375664,
+    "neg_precision": 0.7134146341463414,
+    "neg_recall": 0.7452229299363057,
+    "neg_f1": 0.7289719626168223,
+    "pos_precision": 0.9562363238512035,
+    "pos_recall": 0.9489685124864278,
+    "pos_f1": 0.9525885558583106,
+    "tn": 117,
+    "fp": 40,
+    "fn": 47,
+    "tp": 874
+  },
+  "validation_at_0.5": {
+    "accuracy": 0.8998144712430427,
+    "macro_f1": 0.8253119429590018,
+    "neg_precision": 0.6129032258064516,
+    "neg_recall": 0.8471337579617835,
+    "neg_f1": 0.7112299465240642,
+    "pos_precision": 0.9721254355400697,
+    "pos_recall": 0.9087947882736156,
+    "pos_f1": 0.9393939393939393,
+    "tn": 133,
+    "fp": 24,
+    "fn": 84,
+    "tp": 837
+  },
+  "validation_roc_auc": 0.9360221857991522,
+  "cv": {
+    "inner_threshold": {
+      "mean": 0.446,
+      "std": 0.01140175425099139
+    },
+    "roc_auc": {
+      "mean": 0.9424824890814214,
+      "std": 0.004992731291521381
+    },
+    "tuned_macro_f1": {
+      "mean": 0.8253037392534065,
+      "std": 0.0189544559898092
+    },
+    "t05_macro_f1": {
+      "mean": 0.8159405650857983,
+      "std": 0.01855649917896344
+    },
+    "tuned_accuracy": {
+      "mean": 0.9066175266175266,
+      "std": 0.010580717193321116
+    },
+    "t05_accuracy": {
+      "mean": 0.8938378915428095,
+      "std": 0.013613266347878267
+    },
+    "tuned_neg_precision": {
+      "mean": 0.6547211849169067,
+      "std": 0.04059482036428701
+    },
+    "t05_neg_precision": {
+      "mean": 0.6006269547910076,
+      "std": 0.042663795128132856
+    },
+    "tuned_neg_recall": {
+      "mean": 0.7687841315673843,
+      "std": 0.049600461157837984
+    },
+    "t05_neg_recall": {
+      "mean": 0.8305191136777352,
+      "std": 0.025623432439610985
+    },
+    "tuned_neg_f1": {
+      "mean": 0.7061389770429474,
+      "std": 0.032059142794499694
+    },
+    "t05_neg_f1": {
+      "mean": 0.6962269166141057,
+      "std": 0.02863434554301997
+    }
+  }
+}

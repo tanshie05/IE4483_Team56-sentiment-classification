@@ -6,7 +6,7 @@ Binary sentiment classification of product reviews (0 = negative, 1 = positive) 
 |---|---|---|---|
 | TF-IDF + LR baseline | 0.8408 / 0.9193 | 0.8259 ± 0.0190 / 0.9069 | 0.8287 / 0.9072 |
 | Text CNN (GloVe, fine-tuned) | 0.8434 ± 0.0069 / 0.9199 ± 0.0042 | 0.8260 ± 0.0187 / 0.9109 | 0.8287 / 0.9202 |
-| **CNN + baseline combination (submitted)** | — (chosen on CV) | **0.8388 ± 0.0209 / 0.9166** | **0.8546 / 0.9286** |
+| **CNN + baseline combination (submitted)** | (not scored separately; adopted based on 5-fold CV) | **0.8388 ± 0.0209 / 0.9166** | **0.8546 / 0.9286** |
 
 Validation: 1,078 reviews (CNN mean ± sample std over seeds 42–46). CV: 5 folds of train + val (CNN mean of seeds 42–44). Holdout: 1,078 reviews; models fitted on train + val, CNN seed 42 (seeds 42–46 give 0.8334 ± 0.0056). Every model uses a tuned decision threshold. The final models are retrained on train + val + holdout (7,182 reviews) before predicting the test set.
 
